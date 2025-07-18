@@ -1,0 +1,18 @@
+# core
+python-dotenv
+tqdm
+
+# LangChain + OpenAI
+langchain-openai>=0.1.5
+langchain-core>=0.2.0
+langchain-pinecone>=0.1.0
+
+# Pinecone (new)
+pinecone-client>=4.1.0
+
+# Document parsing
+unstructured[pdf,docx,html]>=0.18.4
+
+# FastAPI & server
+fastapi>=0.116.0
+uvicorn[standard]>=0.29.0
