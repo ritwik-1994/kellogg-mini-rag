@@ -83,9 +83,17 @@ rag_chain = (
 # ────────────────────────────────────────────────────────────────
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
-
+from fastapi.middleware.cors import CORSMiddleware
 # ── 4️⃣  FASTAPI APP ──────────────────────────────────────────
 app = FastAPI(title="Mini-RAG API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or use your frontend URL for tighter security
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # 1️⃣  API routes first
 class ChatRequest(BaseModel):
